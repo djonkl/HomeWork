@@ -19,4 +19,17 @@ public class User
         this.username = username;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public MonetaryAmount calcShippingCosts (Address fromLocation) {
+        return null;
+    }
+
+
 }
