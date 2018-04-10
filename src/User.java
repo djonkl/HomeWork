@@ -1,12 +1,9 @@
-import com.sun.jndi.cosnaming.IiopUrl;
-import com.sun.xml.internal.ws.wsdl.writer.document.http.Address;
+import java.util.ArrayList;
+import java.util.List;
 
-import java.io.Serializable;
-import java.util.StringTokenizer;
+public class User {
 
-public class User
-        implements Serializable {
-//объявление переменных
+
     private String username;
     private Address address;
     private String firstname;
@@ -14,39 +11,75 @@ public class User
     private String password;
     private String email;
     private int ranking;
-    private Boolean admin;
+    private boolean admin;
+    private List<BillingDetails> billingDetailsList = new ArrayList(); //создание списка реквизитов
+    private BillingDetails defaultBillingDetails;
+    private List<Item> boughtItems = new ArrayList<>(); // список куполенных вещей
+    private List<Item> soldItems = new ArrayList<>(); //список проданных вещей
+    private Address billingAddress;
+    private Address shippingAddress;
 
-//объявление методов доступа к переменным
-
-    public User() {}
-
-    public String getName() {
-        return firstname + ' ' + lastname;
+    public Address getShippingAddress () {
+        return shippingAddress;
     }
 
-    public void setName(String name) {
-        StringTokenizer t = new StringTokenizer(name);
-        firstname = t.nextToken();
-        lastname = t.nextToken();
+    public void setShippingAddress(Address shippingAddress) {
+        this.shippingAddress = shippingAddress;
+    }
+    public void addBoughtItem(Item item) {
+        boughtItems.add(item);
+    }
+    public void addSoldItem(Item item) {
+        soldItems.add(item);
+    }
+    public BillingDetails getDefaultBillingDetails() {
+        return defaultBillingDetails;
+    }
+
+    public void setDefaultBillingDetails(BillingDetails billingDetailsList) {
+        this.defaultBillingDetails = billingDetailsList;
+    }
+
+
+    public void addBillingDetails(BillingDetails billingDetails) {
+        billingDetailsList.add(billingDetails);
+        if (billingDetailsList.size() == 1) {
+            setDefaultBillingDetails(billingDetails);
+        }
+    }
+
+
+    public void setaddress(Address address) {
+        this.address = address;
+    }
+
+    public void setBillingAddress(Address billingAddress) {
+        this.billingAddress = billingAddress;
     }
 
     public String getUsername() {
         return username;
     }
 
-    public void setUsername (String username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
+    public String getLastname() {
+        return lastname;
+    }
 
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
 
     public String getPassword() {
         return password;
@@ -72,18 +105,33 @@ public class User
         this.ranking = ranking;
     }
 
-    public Boolean getAdmin() {
+    public boolean isAdmin() {
         return admin;
     }
 
-    public void setAdmin(Boolean admin) {
+    public void setAdmin(boolean admin) {
         this.admin = admin;
     }
 
 
 
-    public MonetaryAmount calcShippingCosts (Address fromLocation) {
-    }
+    @Override
+    public String toString() {  // пишем во едино данные о пользователе
+        return "Пользователь: " + '\n' +
+                "Реквизиты пользователя: " + billingDetailsList + '\n' +
+                "Первичные реквизиты: " + defaultBillingDetails + '\n' +
+                "Домашний адрес: " + address + 'n' +
+                "Адрес покупки: " + billingAddress + 'n' +
+                "Адрес доставки: " + shippingAddress + 'n' +
+                "Имя: " + firstname + 'n' +
+                "Фамилия: " + lastname + 'n' +
+                "Логин: " + username + 'n' +
+                "Пароль: " + password + 'n' +
+                "e-mail: " + email + 'n' +
+                "Ранг: " + ranking + 'n' +
+                "Наличие прав администратора: " + admin;
 
+
+    }
 
 }

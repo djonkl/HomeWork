@@ -1,6 +1,12 @@
-public class BillingDetails {
+abstract public class BillingDetails {
 
-    private String ownername;
+    protected String ownerName;
 
+    public String getOwnername() {
+        return ownerName;
+    }
 
+    public void setOwnername(String ownername) {
+        this.ownerName = ownername;
+    }
 }
