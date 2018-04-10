@@ -1,7 +1,7 @@
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 public class Item {
 
@@ -13,76 +13,62 @@ public class Item {
     private Date endDate;
     private ItemState state;
     private Date approvalDatetime;
-    private Set categories = new HashSet();
+    private List<Bid> bidList = new ArrayList<>();
+    private Bid successBid;
+    private User sellman;
+    private List<Category> categoryList = new ArrayList<>();
 
+    public void addBid(Bid bid) {
+        bidList.add(bid);
+    }
 
-    public String getName() {
-        return name;
+    public void setSuccessBid(Bid successBid) {
+        this.successBid = successBid;
+    }
+
+    public User getSellman() {
+        return sellman;
+    }
+
+    public void setSellman(User sellman) {
+        this.sellman = sellman;
+    }
+
+    public void addCategory(Category category) {
+        categoryList.add(category);
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public BigDecimal getInitialPrice() {
-        return initialPrice;
     }
 
     public void setInitialPrice(BigDecimal initialPrice) {
         this.initialPrice = initialPrice;
     }
 
-    public BigDecimal getReservePrice() {
-        return reservePrice;
-    }
-
     public void setReservePrice(BigDecimal reservePrice) {
         this.reservePrice = reservePrice;
-    }
-
-    public Date getStartDate() {
-        return startDate;
     }
 
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
-        return endDate;
-    }
-
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public Date getApprovalDatetime() {
-        return approvalDatetime;
     }
 
     public void setApprovalDatetime(Date approvalDatetime) {
         this.approvalDatetime = approvalDatetime;
     }
 
-    public Set getCategories() {
-        return categories;
-    }
-
-    public void setCategories(Set categories) {
-        this.categories = categories;
-    }
-
-    public void addCategory (Category category) {
-        if (category == null) throw new IllegalArgumentException("Null category");
-        category.getItems().add(this);
-        categories.add(category);
+    public void setState(ItemState state) {
+        this.state = state;
     }
 }
+
+

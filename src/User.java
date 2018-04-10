@@ -49,7 +49,7 @@ public class User {
     }
 
 
-    public void setaddress(Address address) {
+    public void setHomeAddress(Address address) {
         this.address = address;
     }
 
@@ -57,7 +57,7 @@ public class User {
         this.billingAddress = billingAddress;
     }
 
-    public String getUsername() {
+    public String getUserName() {
         return username;
     }
 
@@ -65,7 +65,7 @@ public class User {
         this.username = username;
     }
 
-    public String getFirstname() {
+    public String getFirstName() {
         return firstname;
     }
 
@@ -73,7 +73,7 @@ public class User {
         this.firstname = firstname;
     }
 
-    public String getLastname() {
+    public String getLastName() {
         return lastname;
     }
 
