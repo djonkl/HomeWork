@@ -2,6 +2,7 @@ import com.sun.jndi.cosnaming.IiopUrl;
 import com.sun.xml.internal.ws.wsdl.writer.document.http.Address;
 
 import java.io.Serializable;
+import java.util.StringTokenizer;
 
 public class User
         implements Serializable {
@@ -19,6 +20,16 @@ public class User
 
     public User() {}
 
+    public String getName() {
+        return firstname + ' ' + lastname;
+    }
+
+    public void setName(String name) {
+        StringTokenizer t = new StringTokenizer(name);
+        firstname = t.nextToken();
+        lastname = t.nextToken();
+    }
+
     public String getUsername() {
         return username;
     }
@@ -35,21 +46,7 @@ public class User
         this.address = address;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
 
     public String getPassword() {
         return password;
