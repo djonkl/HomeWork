@@ -10,9 +10,9 @@ public class Address {
     @Override
     public String toString() {
         return "Адрес: " +
-                "Улица " + street + ' ' +
-                "Код: " + zipcode + ' ' +
-                "Город" + city + '\n';
+                " Улица " + street + ',' +
+                " Код: " + zipcode + ',' +
+                " Город: " + city + '\n';
     }
 
     public void setStreet(String street) {

@@ -26,10 +26,10 @@ public class BankAccount extends BillingDetails {
     @Override
     public String toString() {
         return "Банковский аккаунт клиента: " +
-                "id" + number + '\n' +
-                "Название банка" + bankname + '\n' +
-                "swift" + swift + '\n' +
-                "Владелец карты" + ownerName + '\n';
+                "id клиента: " + number + '\n' +
+                "Название банка: " + bankname + '\n' +
+                "swift: " + swift + '\n' +
+                "Владелец карты: " + ownerName + '\n';
     }
 
 }

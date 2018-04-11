@@ -24,7 +24,7 @@ public class CreditCard extends BillingDetails {
 
     @Override
     public String toString () {
-        return "Банковская карта: " +
+        return "Банковская карта: " +'\n' +
                 "Номер карты: " + number + '\n' +
                 "Месяц окончания срока действия: " + expMonth + '\n' +
                 "Год окончания срока действия: " + expYear + '\n' +

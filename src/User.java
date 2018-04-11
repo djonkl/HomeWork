@@ -120,15 +120,15 @@ public class User {
         return "Пользователь: " + '\n' +
                 "Реквизиты пользователя: " + billingDetailsList + '\n' +
                 "Первичные реквизиты: " + defaultBillingDetails + '\n' +
-                "Домашний адрес: " + address + 'n' +
-                "Адрес покупки: " + billingAddress + 'n' +
-                "Адрес доставки: " + shippingAddress + 'n' +
-                "Имя: " + firstname + 'n' +
-                "Фамилия: " + lastname + 'n' +
-                "Логин: " + username + 'n' +
-                "Пароль: " + password + 'n' +
-                "e-mail: " + email + 'n' +
-                "Ранг: " + ranking + 'n' +
+                "Домашний адрес: " + address + '\n' +
+                "Адрес покупки: " + billingAddress + '\n' +
+                "Адрес доставки: " + shippingAddress + '\n' +
+                "Имя: " + firstname + '\n' +
+                "Фамилия: " + lastname + '\n' +
+                "Логин: " + username + '\n' +
+                "Пароль: " + password + '\n' +
+                "e-mail: " + email + '\n' +
+                "Ранг: " + ranking + '\n' +
                 "Наличие прав администратора: " + admin;
 
 

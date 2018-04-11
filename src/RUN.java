@@ -28,7 +28,7 @@ public class RUN {
 
     }
 
-    public static User createUser() {
+    private static User createUser() {
         User user = new User();
         user.setFirstname("Евгений");
         user.setLastname("Клочков");
@@ -40,14 +40,14 @@ public class RUN {
         Address home = new Address();
         Address billing = new Address();
         Address shipping = new Address();
-        home.setCity("Moscow");
-        home.setStreet("Lenina");
+        home.setCity("Москва");
+        home.setStreet("Ленина");
         home.setZipcode("123123");
-        billing.setCity("Moscow");
-        billing.setStreet("Mira srt.");
+        billing.setCity("Москва");
+        billing.setStreet("Проспект Мира");
         billing.setZipcode("123234");
-        shipping.setCity("Kirov");
-        shipping.setStreet("Gogolya");
+        shipping.setCity("Киров");
+        shipping.setStreet("Гоголя");
         shipping.setZipcode("249441");
 
         user.setShippingAddress(shipping);
