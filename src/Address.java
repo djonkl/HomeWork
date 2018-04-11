@@ -4,9 +4,7 @@ public class Address {
     private String zipcode;
     private String city;
 
-    public String getStreet() {
-        return street;
-    }
+
     @Override
     public String toString() {
         return "Адрес: " +

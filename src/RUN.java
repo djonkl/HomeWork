@@ -6,7 +6,6 @@ public class RUN {
         buyman.setAdmin(false);
         User sellman = createUser();
         sellman.setAdmin(false);
-        User admin = createUser();
         Item sellcar = new Item();
         sellcar.setSellman(sellman);
         Category lada = new Category();
