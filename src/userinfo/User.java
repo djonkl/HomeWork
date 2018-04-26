@@ -1,28 +1,32 @@
+package userinfo;
+
 import java.util.ArrayList;
 import java.util.List;
+import iteminfo.Item;
 
 public class User {
 
 
-    private String username;
+    private String userName;
     private Address address;
-    private String firstname;
-    private String lastname;
+    private String firstName;
+    private String lastName;
     private String password;
     private String email;
     private int ranking;
     private boolean admin;
     private List<BillingDetails> billingDetailsList = new ArrayList(); //создание списка реквизитов
-    private BillingDetails defaultBillingDetails;
-    private List<Item> boughtItems = new ArrayList<>(); // список куполенных вещей
+    private BillingDetails defaultBillingDetails;       //создание списка дефолтных реквизитов
+    private List<Item> boughtItems = new ArrayList<>(); // список купленных вещей
     private List<Item> soldItems = new ArrayList<>(); //список проданных вещей
     private Address billingAddress;
     private Address shippingAddress;
 
+
+
     public Address getShippingAddress () {
         return shippingAddress;
     }
-
     public void setShippingAddress(Address shippingAddress) {
         this.shippingAddress = shippingAddress;
     }
@@ -35,82 +39,68 @@ public class User {
     public BillingDetails getDefaultBillingDetails() {
         return defaultBillingDetails;
     }
-
     public void setDefaultBillingDetails(BillingDetails billingDetailsList) {
         this.defaultBillingDetails = billingDetailsList;
     }
-
-
     public void addBillingDetails(BillingDetails billingDetails) {
         billingDetailsList.add(billingDetails);
         if (billingDetailsList.size() == 1) {
             setDefaultBillingDetails(billingDetails);
         }
     }
-
-
     public void setHomeAddress(Address address) {
         this.address = address;
     }
-
     public void setBillingAddress(Address billingAddress) {
         this.billingAddress = billingAddress;
     }
-
     public String getUserName() {
-        return username;
+        return userName;
     }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
-
     public String getFirstName() {
-        return firstname;
+        return firstName;
     }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
-
     public String getLastName() {
-        return lastname;
+        return lastName;
     }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-
     public String getPassword() {
         return password;
     }
-
     public void setPassword(String password) {
         this.password = password;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
-
     public int getRanking() {
         return ranking;
     }
-
     public void setRanking(int ranking) {
         this.ranking = ranking;
     }
-
     public boolean isAdmin() {
         return admin;
     }
-
     public void setAdmin(boolean admin) {
         this.admin = admin;
+    }
+    public List<Item> getSoldItems() {
+        return soldItems;
+    }
+    public void addSoldItem (Item item) {
+        soldItems.add(item);
     }
 
 
@@ -123,9 +113,9 @@ public class User {
                 "Домашний адрес: " + address + '\n' +
                 "Адрес покупки: " + billingAddress + '\n' +
                 "Адрес доставки: " + shippingAddress + '\n' +
-                "Имя: " + firstname + '\n' +
-                "Фамилия: " + lastname + '\n' +
-                "Логин: " + username + '\n' +
+                "Имя: " + firstName + '\n' +
+                "Фамилия: " + lastName + '\n' +
+                "Логин: " + userName + '\n' +
                 "Пароль: " + password + '\n' +
                 "e-mail: " + email + '\n' +
                 "Ранг: " + ranking + '\n' +
@@ -133,5 +123,17 @@ public class User {
 
 
     }
+
+    //создаем пользователя с параметрами: имя, фамилия, мыло, pwd. пока что без указания адресов
+    public User(String firstName, String lastName, String email, String userName, String password) {
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.email=email;
+        this.userName=userName;
+        this.password=password;
+    }
+
+
+
 
 }

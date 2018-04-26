@@ -1,3 +1,5 @@
+package userinfo;
+
 public class Address {
 
     private String street;

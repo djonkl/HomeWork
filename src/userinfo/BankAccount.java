@@ -1,25 +1,27 @@
+package userinfo;
+
 public class BankAccount extends BillingDetails {
 
     String number;
-    String bankname;
+    String bankName;
     String swift;
 
     public void setNumber(String number) {
         this.number = number;
     }
 
-    public void setBankname(String bankname) {
-        this.bankname = bankname;
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 
     public void setSwift(String swift) {
         this.swift = swift;
     }
 
-    public BankAccount (String ownerName, String number, String bankname, String swift) {
+    public BankAccount (String ownerName, String number, String bankName, String swift) {
         this.ownerName = ownerName;
         this.number = number;
-        this.bankname = bankname;
+        this.bankName = bankName;
         this.swift = swift;
     }
 
@@ -27,7 +29,7 @@ public class BankAccount extends BillingDetails {
     public String toString() {
         return "Банковский аккаунт клиента: " +
                 "id клиента: " + number + '\n' +
-                "Название банка: " + bankname + '\n' +
+                "Название банка: " + bankName + '\n' +
                 "swift: " + swift + '\n' +
                 "Владелец карты: " + ownerName + '\n';
     }

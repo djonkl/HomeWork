@@ -1,3 +1,8 @@
+package iteminfo;
+
+import enums.ItemState;
+import userinfo.User;
+
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
@@ -5,7 +10,7 @@ import java.util.List;
 
 public class Item {
 
-    private String name;
+    private String Name;
     private String description;
     private BigDecimal initialPrice;
     private BigDecimal reservePrice;
@@ -38,8 +43,8 @@ public class Item {
         categoryList.add(category);
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public void setDescription(String description) {

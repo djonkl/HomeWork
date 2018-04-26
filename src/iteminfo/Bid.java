@@ -1,3 +1,7 @@
+package iteminfo;
+
+import userinfo.User;
+
 import java.math.BigDecimal;
 import java.util.Date;
 

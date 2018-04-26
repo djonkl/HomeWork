@@ -1,3 +1,8 @@
+package iteminfo;
+
+import enums.Rating;
+import userinfo.User;
+
 import java.util.Date;
 
 public class Comment {

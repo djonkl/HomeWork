@@ -1,3 +1,7 @@
+package userinfo;
+
+import enums.CreditCardType;
+
 public class CreditCard extends BillingDetails {
 
     private String number;

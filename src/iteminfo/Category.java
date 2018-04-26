@@ -1,9 +1,11 @@
+package iteminfo;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Category {
 
-    private String name;
+    private String Name;
     private Category parentCategory;
     private List<Category> kidsCategory = new ArrayList<>();
     private List<Item> items = new ArrayList<>();
@@ -12,8 +14,8 @@ public class Category {
         this.parentCategory = parentCategory;
 }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public void addChildCategory(Category childCategory) {
